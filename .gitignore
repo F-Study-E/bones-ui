@@ -27,4 +27,4 @@ pnpm-debug.log*
 .idea
 
 # ETC
-TODO.md
+.local
