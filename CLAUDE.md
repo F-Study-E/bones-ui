@@ -95,6 +95,20 @@ pnpm version-packages # 버전 bump + CHANGELOG (CI)
 pnpm release          # build + npm publish (CI)
 ```
 
+## 루틴 (Routine)
+
+브랜치를 새로 생성할 때마다 반드시 아래를 수행한다.
+
+1. `.dev_log/[브랜치명].md`를 `.dev_log/_branch-template.md`에서 복사해 생성한다
+2. `ROUTINE.md`를 열어 작업 루틴을 안내한다
+
+```bash
+cp .log/_branch-template.md .log/[브랜치명].md
+```
+
+- 로그 파일은 반드시 `.dev_log/` 안에 위치한다
+- 브랜치당 로그 파일 하나. 같은 브랜치에서 계속 이어쓴다
+
 ## 금지 사항
 
 - `@bones/utils` npm 배포 대상 변경
