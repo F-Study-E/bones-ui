@@ -1,0 +1,4 @@
+{
+  "extends": "@bones/tsconfig/react.json",
+  "include": ["src"]
+}
