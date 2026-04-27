@@ -2,13 +2,7 @@
   "name": "@bones/react",
   "version": "0.0.0",
   "description": "Headless UI components for React",
-  "keywords": [
-    "react",
-    "headless",
-    "ui",
-    "components",
-    "accessibility"
-  ],
+  "keywords": ["react", "headless", "ui", "components", "accessibility"],
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,9 +15,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
