@@ -1,8 +1,8 @@
 {
-  "name": "@bones/react",
+  "name": "@bones/hooks",
   "version": "0.0.0",
-  "description": "Headless UI components for React",
-  "keywords": ["react", "headless", "ui", "components", "accessibility"],
+  "description": "Shared React hooks for Bones UI",
+  "keywords": ["react", "hooks", "headless", "ui"],
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -25,11 +25,7 @@
     "test:watch": "vitest"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "dependencies": {
-    "@bones/hooks": "workspace:*"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@bones/tsconfig": "workspace:*",
@@ -37,11 +33,11 @@
     "@testing-library/react": "^16.1.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitest/coverage-v8": "^2.1.8",
     "happy-dom": "^15.11.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8",
-    "vitest-axe": "^0.1.0"
+    "vitest": "^2.1.8"
   }
 }
