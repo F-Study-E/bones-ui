@@ -23,7 +23,10 @@ export const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRe
 
 Slot.displayName = "Slot";
 
-function mergeProps(slotProps: Record<string, unknown>, childProps: Record<string, unknown>): Record<string, unknown> {
+function mergeProps(
+  slotProps: Record<string, unknown>,
+  childProps: Record<string, unknown>,
+): Record<string, unknown> {
   const overrideProps: Record<string, unknown> = { ...childProps };
 
   for (const key in slotProps) {
