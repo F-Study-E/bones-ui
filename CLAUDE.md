@@ -52,17 +52,6 @@ export * as DialogPrimitive from "./dialog";
 
 ## 컴포넌트 개발 규칙
 
-### 파일 구조
-
-컴포넌트는 **폴더 단위**로 관리. 파일 단위 금지.
-
-```
-packages/react/src/dialog/
-├── dialog.tsx
-├── dialog.test.tsx
-└── index.ts        # public export만
-```
-
 ### 개발 순서
 
 1. `packages/react/src/[component]/` 구현
