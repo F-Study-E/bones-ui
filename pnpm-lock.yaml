@@ -93,84 +93,8 @@ importers:
         specifier: ^8.3.5
         version: 8.5.1(@swc/core@1.15.32)(postcss@8.5.12)(typescript@5.9.3)(yaml@2.8.3)
 
-  packages/hooks:
-    dependencies:
-      react:
-        specifier: ^18.0.0
-        version: 18.3.1
-    devDependencies:
-      '@bones/tsconfig':
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-      '@bones/tsup-config':
-        specifier: workspace:*
-        version: link:../../configs/tsup-config
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.28
-      '@vitest/coverage-v8':
-        specifier: ^2.1.8
-        version: 2.1.9(vitest@2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3)))
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@swc/core@1.15.32)(postcss@8.5.12)(typescript@5.9.3)(yaml@2.8.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3))
-
-  packages/primitive:
-    devDependencies:
-      '@bones/tsconfig':
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-      '@bones/tsup-config':
-        specifier: workspace:*
-        version: link:../../configs/tsup-config
-      '@testing-library/react':
-        specifier: ^16.1.0
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.28
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.28)
-      '@vitest/coverage-v8':
-        specifier: ^2.1.8
-        version: 2.1.9(vitest@2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3)))
-      happy-dom:
-        specifier: ^15.11.7
-        version: 15.11.7
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@swc/core@1.15.32)(postcss@8.5.12)(typescript@5.9.3)(yaml@2.8.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3))
-
   packages/react:
     dependencies:
-      '@bones/hooks':
-        specifier: workspace:*
-        version: link:../hooks
-      '@bones/primitive':
-        specifier: workspace:*
-        version: link:../primitive
-      '@bones/utils':
-        specifier: workspace:*
-        version: link:../utils
       react:
         specifier: ^18.0.0
         version: 18.3.1
@@ -211,27 +135,6 @@ importers:
       vitest-axe:
         specifier: ^0.1.0
         version: 0.1.0(vitest@2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3)))
-
-  packages/utils:
-    devDependencies:
-      '@bones/tsconfig':
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-      '@bones/tsup-config':
-        specifier: workspace:*
-        version: link:../../configs/tsup-config
-      '@vitest/coverage-v8':
-        specifier: ^2.1.8
-        version: 2.1.9(vitest@2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3)))
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@swc/core@1.15.32)(postcss@8.5.12)(typescript@5.9.3)(yaml@2.8.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@25.6.0)(happy-dom@15.11.7)(msw@2.13.6(@types/node@25.6.0)(typescript@5.9.3))
 
 packages:
 
