@@ -30,17 +30,20 @@ type PrimitiveForwardRefComponent<E extends Node> = React.ForwardRefExoticCompon
   PrimitivePropsWithRef<E>
 >;
 
-type Primitives = { [E in Node]: PrimitiveForwardRefComponent<E> };
+type Primitives = {
+  [E in Node]: PrimitiveForwardRefComponent<E>;
+};
 
-export const Primitive = NODES.reduce((acc, node) => {
-  const Component = React.forwardRef<
-    React.ElementRef<typeof node>,
-    PrimitivePropsWithRef<typeof node>
-  >(({ asChild, ...props }, ref) => {
-    const Comp: React.ElementType = asChild ? Slot : node;
-    return <Comp {...props} ref={ref} />;
-  });
-  Component.displayName = `Primitive.${node}`;
-  acc[node] = Component as Primitives[typeof node];
-  return acc;
-}, {} as Primitives);
+export const Primitive = Object.fromEntries(
+  NODES.map((node) => {
+    const Component = React.forwardRef<
+      React.ElementRef<typeof node>,
+      PrimitivePropsWithRef<typeof node>
+    >(({ asChild, ...props }, ref) => {
+      const Comp: React.ElementType = asChild ? Slot : node;
+      return <Comp {...props} ref={ref} />;
+    });
+    Component.displayName = `Primitive.${node}`;
+    return [node, Component];
+  }),
+) as Primitives;

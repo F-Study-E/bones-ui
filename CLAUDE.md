@@ -38,19 +38,38 @@ Biome 포매터 설정([configs/biome-config/biome.json](configs/biome-config/bi
 | 대상 | 규칙 | 예시 |
 |------|------|------|
 | 파일명 | `kebab-case` | `dialog-trigger.tsx` |
-| 컴포넌트 | `PascalCase` | `DialogTrigger` |
+| 컴포넌트 part 내부 이름 | `PascalCase` 짧게 | `Root`, `Trigger`, `Close` |
 | 훅 | `camelCase` + `use` 접두사 | `useControllableState` |
-| 타입 (외부) | `PascalCase` | `DialogProps` |
+| 타입 (외부) | `PascalCase` + 컴포넌트 prefix | `DialogProps`, `DialogTriggerProps` |
 | 타입 (내부) | `PascalCase` + `Internal` 접미사 | `DialogInternalState` |
 
 ### export 구조
 
+컴포넌트는 **namespace re-export로 도트 표기를 1차 API로 제공**한다. `<Dialog.Trigger>` 같은 정적 접근은 모던 번들러(esbuild/Rollup/webpack 5+)가 정상적으로 tree-shake 한다. `Foo.Bar = FooBar` 같은 정적 프로퍼티 할당은 tree-shaking을 깨뜨리므로 사용 금지.
+
 ```ts
-// 개별 export (tree-shaking 친화)
-export { DialogRoot, DialogTrigger, DialogClose } from "./dialog";
-// namespace object (라이브러리 작성자 편의)
-export * as DialogPrimitive from "./dialog";
+// dialog/dialog.tsx — 내부에서는 짧은 이름
+export const Root = React.forwardRef(...);
+export const Trigger = React.forwardRef(...);
+export const Close = React.forwardRef(...);
+
+// dialog/index.ts — 컴포넌트는 namespace, 타입은 flat
+export * as Dialog from "./dialog";
+export type { DialogProps, DialogTriggerProps } from "./dialog.types";
 ```
+
+사용:
+```tsx
+import { Dialog, type DialogProps } from "@bones/react";
+
+<Dialog.Root>
+  <Dialog.Trigger>열기</Dialog.Trigger>
+</Dialog.Root>
+```
+
+단일 part 컴포넌트(`Slot`, `Primitive` 등)는 namespace 없이 flat export.
+
+displayName은 도트 표기를 그대로 사용해 React DevTools에서도 동일하게 보이게 한다 — `Root.displayName = "Dialog.Root"`.
 
 ### Git
 
