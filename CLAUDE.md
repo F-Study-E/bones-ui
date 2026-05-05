@@ -26,12 +26,8 @@ apps/
 
 ### 코드 스타일
 
-Biome 포매터 설정([configs/biome-config/biome.json](configs/biome-config/biome.json))을 항상 따른다.
-
-- `lineWidth: 100` — 100자 안에 들어가는 라인은 한 줄로 유지. 80자 기준으로 보수적으로 끊지 말 것 (저장 시 IDE Biome 확장이 자동으로 합쳐 diff 노이즈 발생).
-- `indentWidth: 2`, `indentStyle: space`
-- `quoteStyle: double`, `trailingCommas: all`, `semicolons: always`
-- 코드 작성 후 의심되면 `pnpm format` 한 번 돌려 확인.
+[configs/biome-config/biome.json](configs/biome-config/biome.json)의 Biome 포매터 규칙을 따른다.
+코드 작성 후 의심되면 `pnpm format` 한 번 돌려 확인.
 
 ### 네이밍
 
