@@ -1,5 +1,7 @@
 # Bones UI — CLAUDE.md
 
+@packages/react/CLAUDE.md
+
 ## 프로젝트 개요
 
 React 기반 headless UI 라이브러리 모노레포. 최종 목표: npm 공개 배포.
