@@ -1,5 +1,5 @@
-import { useControllableState } from "@bones/hooks";
 import * as React from "react";
+import { useControllableState } from "../hooks";
 import { Primitive } from "../primitive/primitive";
 import { useComposeRefs } from "../slot/slot.utils";
 import { BubbleInput } from "./bubble-input";

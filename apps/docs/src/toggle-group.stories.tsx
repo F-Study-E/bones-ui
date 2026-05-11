@@ -54,7 +54,9 @@ export const Disabled: Story = () => (
 export const ItemDisabled: Story = () => (
   <ToggleGroup.Root type="single">
     <ToggleGroup.Item value="a">A</ToggleGroup.Item>
-    <ToggleGroup.Item value="b" disabled>B (disabled)</ToggleGroup.Item>
+    <ToggleGroup.Item value="b" disabled>
+      B (disabled)
+    </ToggleGroup.Item>
     <ToggleGroup.Item value="c">C</ToggleGroup.Item>
   </ToggleGroup.Root>
 );
