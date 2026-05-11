@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Primitive } from "../primitive/primitive";
-import { useControllableState } from "./toggle-group.hook";
+import { useControllableState } from "../hooks/use-controllable-state";
 import type {
   ToggleGroupContextValue,
   ToggleGroupItemProps,
