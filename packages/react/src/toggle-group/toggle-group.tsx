@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Primitive } from "../primitive/primitive";
 import { useControllableState } from "../hooks/use-controllable-state";
+import { Primitive } from "../primitive/primitive";
 import type {
   ToggleGroupContextValue,
   ToggleGroupItemProps,
@@ -40,10 +40,10 @@ const ToggleGroupSingleImpl = React.forwardRef<HTMLDivElement, SingleImplProps>(
     },
     ref,
   ) => {
-    const [selected, setSelected] = useControllableState({
-      ...(value !== undefined ? { prop: value } : {}),
+    const [selected = "", setSelected] = useControllableState<string>({
+      prop: value,
       defaultProp: defaultValue ?? "",
-      ...(onValueChange !== undefined ? { onChange: onValueChange } : {}),
+      onChange: onValueChange,
     });
 
     const onItemToggle = React.useCallback(
@@ -94,10 +94,10 @@ const ToggleGroupMultipleImpl = React.forwardRef<HTMLDivElement, MultipleImplPro
     },
     ref,
   ) => {
-    const [selected, setSelected] = useControllableState({
-      ...(value !== undefined ? { prop: value } : {}),
+    const [selected = [], setSelected] = useControllableState<string[]>({
+      prop: value,
       defaultProp: defaultValue ?? [],
-      ...(onValueChange !== undefined ? { onChange: onValueChange } : {}),
+      onChange: onValueChange,
     });
 
     const onItemToggle = React.useCallback(
