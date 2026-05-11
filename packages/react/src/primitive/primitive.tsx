@@ -41,6 +41,6 @@ export const Primitive = NODES.reduce((acc, node) => {
     return <Comp {...props} ref={ref} />;
   });
   Component.displayName = `Primitive.${node}`;
-  acc[node] = Component as Primitives[typeof node];
+  (acc as Record<string, unknown>)[node] = Component;
   return acc;
 }, {} as Primitives);
