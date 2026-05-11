@@ -2,7 +2,8 @@
   "extends": "@bones/tsconfig/lib.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "composite": false
   },
   "include": ["src"]
 }

@@ -23,8 +23,6 @@ React 기반 headless UI 라이브러리. 스타일 없이 동작, 접근성 기
 | 패키지 | 설명 |
 |--------|------|
 | `@bones/react` | 메인 headless 컴포넌트 |
-| `@bones/primitive` | Slot, composeRefs 등 저수준 유틸 |
-| `@bones/hooks` | useControllableState 등 공용 훅 |
 
 ## 개발 환경 설정
 

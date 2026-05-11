@@ -1,5 +1,7 @@
 # Bones UI — CLAUDE.md
 
+@packages/react/CLAUDE.md
+
 ## 프로젝트 개요
 
 React 기반 headless UI 라이브러리 모노레포. 최종 목표: npm 공개 배포.
@@ -11,37 +13,58 @@ React 기반 headless UI 라이브러리 모노레포. 최종 목표: npm 공개
 
 ```
 packages/
-├── react/      @bones/react      메인 headless 컴포넌트 (npm public)
-├── primitive/  @bones/primitive  Slot, composeRefs (npm public)
-├── hooks/      @bones/hooks      공용 훅 (npm public)
-└── utils/      @bones/utils      내부 유틸 (private, npm 배포 안 함)
+└── react/  @bones/react  메인 headless 컴포넌트 (npm public)
 apps/
 ├── docs/        Ladle 문서
 └── playground/  개발용 샌드박스
 ```
 
-의존 방향 (단방향 엄수): `utils ← hooks ← primitive ← react`
+> `@bones/primitive`, `@bones/hooks`, `@bones/utils`는 추후 필요 시 별도 패키지로 분리 예정. 현재는 `@bones/react` 안에서 관리.
 
 ## 컨벤션
+
+### 코드 스타일
+
+[configs/biome-config/biome.json](configs/biome-config/biome.json)의 Biome 포매터 규칙을 따른다.
+코드 작성 후 의심되면 `pnpm format` 한 번 돌려 확인.
 
 ### 네이밍
 
 | 대상 | 규칙 | 예시 |
 |------|------|------|
 | 파일명 | `kebab-case` | `dialog-trigger.tsx` |
-| 컴포넌트 | `PascalCase` | `DialogTrigger` |
+| 컴포넌트 part 내부 이름 | `PascalCase` 짧게 | `Root`, `Trigger`, `Close` |
 | 훅 | `camelCase` + `use` 접두사 | `useControllableState` |
-| 타입 (외부) | `PascalCase` | `DialogProps` |
+| 타입 (외부) | `PascalCase` + 컴포넌트 prefix | `DialogProps`, `DialogTriggerProps` |
 | 타입 (내부) | `PascalCase` + `Internal` 접미사 | `DialogInternalState` |
 
 ### export 구조
 
+컴포넌트는 **namespace re-export로 도트 표기를 1차 API로 제공**한다. `<Dialog.Trigger>` 같은 정적 접근은 모던 번들러(esbuild/Rollup/webpack 5+)가 정상적으로 tree-shake 한다. `Foo.Bar = FooBar` 같은 정적 프로퍼티 할당은 tree-shaking을 깨뜨리므로 사용 금지.
+
 ```ts
-// 개별 export (tree-shaking 친화)
-export { DialogRoot, DialogTrigger, DialogClose } from "./dialog";
-// namespace object (라이브러리 작성자 편의)
-export * as DialogPrimitive from "./dialog";
+// dialog/dialog.tsx — 내부에서는 짧은 이름
+export const Root = React.forwardRef(...);
+export const Trigger = React.forwardRef(...);
+export const Close = React.forwardRef(...);
+
+// dialog/index.ts — 컴포넌트는 namespace, 타입은 flat
+export * as Dialog from "./dialog";
+export type { DialogProps, DialogTriggerProps } from "./dialog.types";
 ```
+
+사용:
+```tsx
+import { Dialog, type DialogProps } from "@bones/react";
+
+<Dialog.Root>
+  <Dialog.Trigger>열기</Dialog.Trigger>
+</Dialog.Root>
+```
+
+단일 part 컴포넌트(`Slot`, `Primitive` 등)는 namespace 없이 flat export.
+
+displayName은 도트 표기를 그대로 사용해 React DevTools에서도 동일하게 보이게 한다 — `Root.displayName = "Dialog.Root"`.
 
 ### Git
 
@@ -51,17 +74,6 @@ export * as DialogPrimitive from "./dialog";
 - 커밋 훅: Husky + lint-staged (Biome lint/format 자동 실행)
 
 ## 컴포넌트 개발 규칙
-
-### 파일 구조
-
-컴포넌트는 **폴더 단위**로 관리. 파일 단위 금지.
-
-```
-packages/react/src/dialog/
-├── dialog.tsx
-├── dialog.test.tsx
-└── index.ts        # public export만
-```
 
 ### 개발 순서
 
@@ -111,8 +123,7 @@ cp .log/_branch-template.md .log/[브랜치명].md
 
 ## 금지 사항
 
-- `@bones/utils` npm 배포 대상 변경
-- 패키지 의존 방향 역전
+- 패키지 의존 방향 역전 (분리 시 단방향 엄수: `utils ← hooks ← primitive ← react`)
 - story 없이 컴포넌트 export
 - changeset 없이 `packages/*` 변경 PR
 - `@bones/react`에 스타일 추가 (v1 전까지)
