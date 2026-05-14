@@ -26,10 +26,13 @@ describe("Accordion", () => {
       expect(buttons).toHaveLength(2);
     });
 
-    it("초기 상태에서 모든 Content가 hidden이다", () => {
+    it("초기 상태에서 모든 Content의 data-state가 closed이다", () => {
       render(<TestAccordion />);
-      const regions = screen.queryAllByRole("region");
-      expect(regions).toHaveLength(0);
+      const sections = document.querySelectorAll("section");
+      for (const section of sections) {
+        expect(section.getAttribute("data-state")).toBe("closed");
+        expect(section.hasAttribute("data-open")).toBe(false);
+      }
     });
 
     it("Trigger에 aria-expanded=false가 기본으로 설정된다", () => {

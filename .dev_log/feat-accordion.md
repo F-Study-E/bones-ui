@@ -68,6 +68,6 @@
 
 ## 미해결 / 나중에 볼 것
 
-- [ ] Content 열림/닫힘 애니메이션 지원 — `hidden` 속성을 제거하고 CSS `grid-template-rows: 0fr → 1fr` 트릭 또는 Web Animations API로 구현하는 방식 검토
+- [ ] `hidden={!isOpen}` 제거 — `hidden`은 `display:none`을 강제해 사용자가 CSS transition을 적용할 수 없음. headless 철학상 숨김 처리는 사용자 CSS(`[data-state="closed"]`)에 위임하고 `data-state`만 제공해야 함
 - [ ] 키보드 내비게이션 — WAI-ARIA Accordion Pattern은 `ArrowDown` / `ArrowUp` / `Home` / `End` 로 Trigger 간 이동을 권장. 현재 미구현
 - [ ] changeset 추가 필요 (`@bones/react` minor)

@@ -249,7 +249,6 @@ export const Content = React.forwardRef<HTMLElement, AccordionContentProps>(
         data-state={itemCtx.isOpen ? "open" : "closed"}
         data-open={itemCtx.isOpen ? "" : undefined}
         data-disabled={itemCtx.isDisabled ? "" : undefined}
-        hidden={!itemCtx.isOpen}
         {...props}
         {...(asChild !== undefined && { asChild })}
         ref={ref}

@@ -30,6 +30,7 @@ const styles = `
 .demo-chevron { font-size: 12px; transition: transform 180ms; flex-shrink: 0; }
 .demo-trigger[data-state="open"] .demo-chevron { transform: rotate(180deg); }
 .demo-content { padding: 0 16px 14px; font-size: 14px; color: #6b7280; line-height: 1.6; }
+.demo-content[data-state="closed"] { display: none; }
 `;
 
 function StyleBlock() {
