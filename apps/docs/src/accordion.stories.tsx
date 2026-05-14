@@ -69,6 +69,26 @@ const items = [
 export const Single: Story = () => (
   <>
     <StyleBlock />
+    <Accordion.Root type="single" className="demo-accordion">
+      {items.map((item) => (
+        <Accordion.Item key={item.value} value={item.value} className="demo-item">
+          <Accordion.Trigger className="demo-trigger">
+            {item.label}
+            <span className="demo-chevron" aria-hidden="true">
+              ▼
+            </span>
+          </Accordion.Trigger>
+          <Accordion.Content className="demo-content">{item.content}</Accordion.Content>
+        </Accordion.Item>
+      ))}
+    </Accordion.Root>
+  </>
+);
+Single.storyName = "Single (단일 — 다른 항목 클릭으로만 전환)";
+
+export const SingleCollapsible: Story = () => (
+  <>
+    <StyleBlock />
     <Accordion.Root type="single" collapsible className="demo-accordion">
       {items.map((item) => (
         <Accordion.Item key={item.value} value={item.value} className="demo-item">
@@ -84,7 +104,7 @@ export const Single: Story = () => (
     </Accordion.Root>
   </>
 );
-Single.storyName = "Single (단일 열기)";
+SingleCollapsible.storyName = "SingleCollapsible (같은 항목 클릭으로 닫기 가능)";
 
 export const Multiple: Story = () => (
   <>
@@ -200,7 +220,10 @@ export const Animated: Story = () => (
             </span>
           </Accordion.Trigger>
           <Accordion.Content className="demo-animated-content">
-            <div className="demo-animated-inner" style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}>
+            <div
+              className="demo-animated-inner"
+              style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}
+            >
               {item.content}
             </div>
           </Accordion.Content>
