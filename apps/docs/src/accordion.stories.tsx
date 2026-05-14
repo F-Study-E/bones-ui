@@ -31,6 +31,17 @@ const styles = `
 .demo-trigger[data-state="open"] .demo-chevron { transform: rotate(180deg); }
 .demo-content { padding: 0 16px 14px; font-size: 14px; color: #6b7280; line-height: 1.6; }
 .demo-content[data-state="closed"] { display: none; }
+
+/* 애니메이션 스타일 */
+.demo-animated-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 250ms ease;
+  overflow: hidden;
+}
+.demo-animated-content[data-state="open"] { grid-template-rows: 1fr; }
+.demo-animated-inner { overflow: hidden; padding: 0 16px; }
+.demo-animated-content[data-state="open"] .demo-animated-inner { padding-bottom: 14px; }
 `;
 
 function StyleBlock() {
@@ -175,3 +186,27 @@ export const Disabled: Story = () => (
   </>
 );
 Disabled.storyName = "Disabled (비활성)";
+
+export const Animated: Story = () => (
+  <>
+    <StyleBlock />
+    <Accordion.Root type="single" collapsible className="demo-accordion">
+      {items.map((item) => (
+        <Accordion.Item key={item.value} value={item.value} className="demo-item">
+          <Accordion.Trigger className="demo-trigger">
+            {item.label}
+            <span className="demo-chevron" aria-hidden="true">
+              ▼
+            </span>
+          </Accordion.Trigger>
+          <Accordion.Content className="demo-animated-content">
+            <div className="demo-animated-inner" style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}>
+              {item.content}
+            </div>
+          </Accordion.Content>
+        </Accordion.Item>
+      ))}
+    </Accordion.Root>
+  </>
+);
+Animated.storyName = "Animated (CSS grid 트릭)";
