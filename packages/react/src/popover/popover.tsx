@@ -70,22 +70,23 @@ Root.displayName = "Popover.Root";
 
 // ---- Anchor ----
 
-export const Anchor = React.forwardRef<HTMLDivElement, PopoverAnchorProps>(
-  function PopoverAnchor({ asChild, ...props }, forwardedRef) {
-    const ctx = usePopoverContext("Popover.Anchor");
-    const composedRef = useComposeRefs(
-      forwardedRef,
-      ctx.customAnchorRef as React.RefObject<HTMLDivElement>,
-    );
+export const Anchor = React.forwardRef<HTMLDivElement, PopoverAnchorProps>(function PopoverAnchor(
+  { asChild, ...props },
+  forwardedRef,
+) {
+  const ctx = usePopoverContext("Popover.Anchor");
+  const composedRef = useComposeRefs(
+    forwardedRef,
+    ctx.customAnchorRef as React.RefObject<HTMLDivElement>,
+  );
 
-    React.useEffect(() => {
-      ctx.onHasCustomAnchorChange(true);
-      return () => ctx.onHasCustomAnchorChange(false);
-    }, [ctx.onHasCustomAnchorChange]);
+  React.useEffect(() => {
+    ctx.onHasCustomAnchorChange(true);
+    return () => ctx.onHasCustomAnchorChange(false);
+  }, [ctx.onHasCustomAnchorChange]);
 
-    return <Primitive.div {...(asChild !== undefined && { asChild })} {...props} ref={composedRef} />;
-  },
-);
+  return <Primitive.div {...(asChild !== undefined && { asChild })} {...props} ref={composedRef} />;
+});
 Anchor.displayName = "Popover.Anchor";
 
 // ---- Trigger ----
@@ -220,21 +221,22 @@ Content.displayName = "Popover.Content";
 
 // ---- Close ----
 
-export const Close = React.forwardRef<HTMLButtonElement, PopoverCloseProps>(
-  function PopoverClose({ asChild, onClick, ...props }, forwardedRef) {
-    const ctx = usePopoverContext("Popover.Close");
-    return (
-      <Primitive.button
-        type="button"
-        {...(asChild !== undefined && { asChild })}
-        {...props}
-        ref={forwardedRef}
-        onClick={(e) => {
-          onClick?.(e);
-          if (!e.defaultPrevented) ctx.onOpenChange(false);
-        }}
-      />
-    );
-  },
-);
+export const Close = React.forwardRef<HTMLButtonElement, PopoverCloseProps>(function PopoverClose(
+  { asChild, onClick, ...props },
+  forwardedRef,
+) {
+  const ctx = usePopoverContext("Popover.Close");
+  return (
+    <Primitive.button
+      type="button"
+      {...(asChild !== undefined && { asChild })}
+      {...props}
+      ref={forwardedRef}
+      onClick={(e) => {
+        onClick?.(e);
+        if (!e.defaultPrevented) ctx.onOpenChange(false);
+      }}
+    />
+  );
+});
 Close.displayName = "Popover.Close";
