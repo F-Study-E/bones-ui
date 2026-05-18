@@ -1,5 +1,5 @@
 {
-  "extends": "@bones/tsconfig/lib.json",
+  "extends": "@bones-ui/tsconfig/lib.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",

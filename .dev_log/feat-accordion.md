@@ -6,7 +6,7 @@
 
 ## 목표
 
-- `@bones/react`에 **Accordion** 컴포넌트 추가 (Root / Item / Trigger / Content)
+- `@bones-ui/react`에 **Accordion** 컴포넌트 추가 (Root / Item / Trigger / Content)
 - `type="single"` (collapsible 옵션) / `type="multiple"` 두 모드 지원
 - 제어·비제어 모드, Root·Item 레벨 disabled, WAI-ARIA 완전 지원
 
@@ -70,4 +70,4 @@
 
 - [ ] `hidden={!isOpen}` 제거 — `hidden`은 `display:none`을 강제해 사용자가 CSS transition을 적용할 수 없음. headless 철학상 숨김 처리는 사용자 CSS(`[data-state="closed"]`)에 위임하고 `data-state`만 제공해야 함
 - [ ] 키보드 내비게이션 — WAI-ARIA Accordion Pattern은 `ArrowDown` / `ArrowUp` / `Home` / `End` 로 Trigger 간 이동을 권장. 현재 미구현
-- [ ] changeset 추가 필요 (`@bones/react` minor)
+- [ ] changeset 추가 필요 (`@bones-ui/react` minor)

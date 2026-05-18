@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@bones/docs", "@bones/playground"]
+  "ignore": ["@bones-ui/docs", "@bones-ui/playground"]
 }

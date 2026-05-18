@@ -1,4 +1,4 @@
-import { Popover } from "@bones/react";
+import { Popover } from "@bones-ui/react";
 import * as React from "react";
 
 export default {

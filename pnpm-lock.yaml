@@ -26,7 +26,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@bones/react':
+      '@bones-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -36,7 +36,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@bones/tsconfig':
+      '@bones-ui/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@ladle/react':
@@ -54,7 +54,7 @@ importers:
 
   apps/playground:
     dependencies:
-      '@bones/react':
+      '@bones-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -64,7 +64,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@bones/tsconfig':
+      '@bones-ui/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@types/react':
@@ -102,10 +102,10 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@bones/tsconfig':
+      '@bones-ui/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
-      '@bones/tsup-config':
+      '@bones-ui/tsup-config':
         specifier: workspace:*
         version: link:../../configs/tsup-config
       '@testing-library/react':

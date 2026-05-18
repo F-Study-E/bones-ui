@@ -1,5 +1,5 @@
 {
-  "name": "@bones/biome-config",
+  "name": "@bones-ui/biome-config",
   "version": "0.0.0",
   "private": true,
   "exports": {

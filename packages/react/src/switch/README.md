@@ -5,7 +5,7 @@
 ## 사용
 
 ```tsx
-import { Switch } from "@bones/react";
+import { Switch } from "@bones-ui/react";
 
 <Switch.Root checked={on} onCheckedChange={setOn}>
   <Switch.Thumb />

@@ -1,4 +1,4 @@
-import { Switch } from "@bones/react";
+import { Switch } from "@bones-ui/react";
 import * as React from "react";
 
 export default {
