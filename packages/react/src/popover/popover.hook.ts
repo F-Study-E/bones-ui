@@ -24,7 +24,7 @@ export function usePopoverPosition({
 }: UsePopoverPositionParams): PopoverPosition {
   const [position, setPosition] = React.useState<PopoverPosition>(null);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!open) {
       setPosition(null);
       return;
@@ -85,6 +85,14 @@ export function usePopoverPosition({
     }
 
     compute();
+
+    window.addEventListener("scroll", compute, { capture: true, passive: true });
+    window.addEventListener("resize", compute);
+
+    return () => {
+      window.removeEventListener("scroll", compute, { capture: true });
+      window.removeEventListener("resize", compute);
+    };
   }, [open, anchorRef, contentRef, side, sideOffset, align, alignOffset]);
 
   return position;
