@@ -15,6 +15,7 @@ const NODES = [
   "nav",
   "ol",
   "p",
+  "section",
   "span",
   "svg",
   "ul",
