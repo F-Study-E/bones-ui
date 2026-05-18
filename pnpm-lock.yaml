@@ -27,8 +27,8 @@ importers:
   apps/docs:
     dependencies:
       '@bones-ui/react':
-        specifier: workspace:*
-        version: link:../../packages/react
+        specifier: npm:@bones-ui/react@^0.1.0
+        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -284,6 +284,12 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@bones-ui/react@0.1.0':
+    resolution: {integrity: sha512-J2IVP3IMJ0bKuefZ5gi/aOxSVjkwe3OOM5AOm+Ufn9u1gdzFQI8bKeSR4aoEGfaBgrTlfJDbKfSz+QUsLmxPIw==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
 
   '@changesets/apply-release-plan@7.1.1':
     resolution: {integrity: sha512-9qPCm/rLx/xoOFXIHGB229+4GOL76S4MC+7tyOuTsR6+1jYlfFDQORdvwR5hDA6y4FL2BPt3qpbcQIS+dW85LA==}
@@ -3350,6 +3356,11 @@ snapshots:
 
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
+
+  '@bones-ui/react@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@changesets/apply-release-plan@7.1.1':
     dependencies:
