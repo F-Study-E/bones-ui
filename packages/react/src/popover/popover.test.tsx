@@ -150,9 +150,9 @@ describe("Popover", () => {
 
     it("닫힌 상태에서 트리거의 aria-controls는 없다", () => {
       render(<BasicPopover />);
-      expect(
-        screen.getByRole("button", { name: "열기" }).hasAttribute("aria-controls"),
-      ).toBe(false);
+      expect(screen.getByRole("button", { name: "열기" }).hasAttribute("aria-controls")).toBe(
+        false,
+      );
     });
   });
 
