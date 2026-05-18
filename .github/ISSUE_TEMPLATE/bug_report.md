@@ -14,6 +14,6 @@ labels: bug
 
 ## 환경
 
-- `@bones/react` 버전:
+- `@bones-ui/react` 버전:
 - React 버전:
 - 브라우저/Node:

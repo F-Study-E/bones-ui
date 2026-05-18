@@ -1,10 +1,29 @@
 {
-  "name": "@bones/react",
-  "version": "0.0.0",
-  "description": "Headless UI components for React",
-  "keywords": ["react", "headless", "ui", "components", "accessibility"],
+  "name": "@bones-ui/react",
+  "version": "0.1.0",
+  "description": "Headless UI components for React with built-in accessibility",
+  "keywords": [
+    "react",
+    "headless",
+    "ui",
+    "components",
+    "accessibility",
+    "a11y",
+    "radix-alternative"
+  ],
   "license": "MIT",
+  "author": "ehdrjs4502",
+  "homepage": "https://github.com/F-Study-E/bones-ui#readme",
+  "bugs": {
+    "url": "https://github.com/F-Study-E/bones-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F-Study-E/bones-ui.git",
+    "directory": "packages/react"
+  },
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,7 +34,10 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": ["dist", "README.md", "LICENSE"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -29,8 +51,8 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@bones/tsconfig": "workspace:*",
-    "@bones/tsup-config": "workspace:*",
+    "@bones-ui/tsconfig": "workspace:*",
+    "@bones-ui/tsup-config": "workspace:*",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

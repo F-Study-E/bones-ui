@@ -22,7 +22,7 @@ React 기반 headless UI 라이브러리. 스타일 없이 동작, 접근성 기
 
 | 패키지 | 설명 |
 |--------|------|
-| `@bones/react` | 메인 headless 컴포넌트 |
+| `@bones-ui/react` | 메인 headless 컴포넌트 |
 
 ## 개발 환경 설정
 
@@ -46,8 +46,8 @@ pnpm clean        # 빌드 결과물 삭제
 특정 패키지만:
 
 ```bash
-pnpm --filter @bones/react build
-pnpm --filter @bones/react test
+pnpm --filter @bones-ui/react build
+pnpm --filter @bones-ui/react test
 ```
 
 ## 컴포넌트 문서 구조
@@ -60,5 +60,5 @@ Overview → Anatomy → Installation → API Reference → Examples → Accessi
 
 ## 로드맵
 
-- **v0**: headless 컴포넌트 (`@bones/react`)
-- **v1**: 스타일 레이어 추가 (`@bones/css`, `@bones/theme`)
+- **v0**: headless 컴포넌트 (`@bones-ui/react`)
+- **v1**: 스타일 레이어 추가 (`@bones-ui/css`, `@bones-ui/theme`)

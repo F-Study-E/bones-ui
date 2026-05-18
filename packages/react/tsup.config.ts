@@ -1,4 +1,4 @@
-import { baseConfig } from "@bones/tsup-config";
+import { baseConfig } from "@bones-ui/tsup-config";
 import { defineConfig } from "tsup";
 
 export default defineConfig({

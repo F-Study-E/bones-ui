@@ -1,5 +1,5 @@
 {
-  "name": "@bones/tsup-config",
+  "name": "@bones-ui/tsup-config",
   "version": "0.0.0",
   "private": true,
   "type": "module",

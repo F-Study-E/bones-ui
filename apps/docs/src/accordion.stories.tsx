@@ -1,4 +1,4 @@
-import { Accordion } from "@bones/react";
+import { Accordion } from "@bones-ui/react";
 import type { Story } from "@ladle/react";
 import * as React from "react";
 

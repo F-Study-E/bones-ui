@@ -1,4 +1,4 @@
-import { Tooltip } from "@bones/react";
+import { Tooltip } from "@bones-ui/react";
 import * as React from "react";
 
 export default {

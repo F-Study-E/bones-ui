@@ -6,7 +6,7 @@
 
 ## 목표
 
-- `@bones/primitive` 패키지의 `Slot`, `composeRefs`, `useComposeRefs` 구현
+- `@bones-ui/primitive` 패키지의 `Slot`, `composeRefs`, `useComposeRefs` 구현
 - 단위 테스트 + vitest 설정
 - 첫 changeset (minor) 추가
 

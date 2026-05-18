@@ -5,7 +5,7 @@
 ## 사용
 
 ```tsx
-import { Tooltip } from "@bones/react";
+import { Tooltip } from "@bones-ui/react";
 
 <Tooltip.Root>
   <Tooltip.Trigger>버튼</Tooltip.Trigger>

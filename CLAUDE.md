@@ -6,20 +6,20 @@
 
 React 기반 headless UI 라이브러리 모노레포. 최종 목표: npm 공개 배포.
 
-- **v0 (현재)**: 스타일 없는 headless 컴포넌트 (`@bones/react`)
-- **v1 (예정)**: 스타일 레이어 별도 패키지 추가 — `@bones/react`는 수정하지 않음
+- **v0 (현재)**: 스타일 없는 headless 컴포넌트 (`@bones-ui/react`)
+- **v1 (예정)**: 스타일 레이어 별도 패키지 추가 — `@bones-ui/react`는 수정하지 않음
 
 ## 패키지 구조
 
 ```
 packages/
-└── react/  @bones/react  메인 headless 컴포넌트 (npm public)
+└── react/  @bones-ui/react  메인 headless 컴포넌트 (npm public)
 apps/
 ├── docs/        Ladle 문서
 └── playground/  개발용 샌드박스
 ```
 
-> `@bones/primitive`, `@bones/hooks`, `@bones/utils`는 추후 필요 시 별도 패키지로 분리 예정. 현재는 `@bones/react` 안에서 관리.
+> `@bones-ui/primitive`, `@bones-ui/hooks`, `@bones-ui/utils`는 추후 필요 시 별도 패키지로 분리 예정. 현재는 `@bones-ui/react` 안에서 관리.
 
 ## 컨벤션
 
@@ -55,7 +55,7 @@ export type { DialogProps, DialogTriggerProps } from "./dialog.types";
 
 사용:
 ```tsx
-import { Dialog, type DialogProps } from "@bones/react";
+import { Dialog, type DialogProps } from "@bones-ui/react";
 
 <Dialog.Root>
   <Dialog.Trigger>열기</Dialog.Trigger>
@@ -126,4 +126,4 @@ cp .log/_branch-template.md .log/[브랜치명].md
 - 패키지 의존 방향 역전 (분리 시 단방향 엄수: `utils ← hooks ← primitive ← react`)
 - story 없이 컴포넌트 export
 - changeset 없이 `packages/*` 변경 PR
-- `@bones/react`에 스타일 추가 (v1 전까지)
+- `@bones-ui/react`에 스타일 추가 (v1 전까지)

@@ -1,4 +1,4 @@
-# @bones/react — CLAUDE.md
+# @bones-ui/react — CLAUDE.md
 
 ## 컴포넌트 파일 구조
 

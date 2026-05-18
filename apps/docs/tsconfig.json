@@ -1,4 +1,4 @@
 {
-  "extends": "@bones/tsconfig/react.json",
+  "extends": "@bones-ui/tsconfig/react.json",
   "include": ["src", ".ladle"]
 }

@@ -1,4 +1,4 @@
-import { ToggleGroup } from "@bones/react";
+import { ToggleGroup } from "@bones-ui/react";
 import type { Story } from "@ladle/react";
 import { useState } from "react";
 

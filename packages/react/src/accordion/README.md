@@ -5,7 +5,7 @@
 ## 사용
 
 ```tsx
-import { Accordion } from "@bones/react";
+import { Accordion } from "@bones-ui/react";
 
 <Accordion.Root type="single" collapsible>
   <Accordion.Item value="item-1">
